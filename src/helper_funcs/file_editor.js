@@ -6,9 +6,9 @@ const { fs } = require("../config/config");
  *failure of program's execution. If acc fails registration -> fail file.
  *If successful, accounts go to registered_account file. 
  */
-function transferCredentials(data_array, index, transfer_file, flag) {
+function transferCredentials(data_array, transfer_file, flag) {
   //remove credentials and proxy from array.
-  var data = data_array.splice(index, 1)[0];
+  var data = data_array.splice(0, 1)[0];
   console.log(data_array);
   //append credentials to file.
   fs.appendFile(transfer_file, data + "\n", (err) => {
@@ -22,4 +22,10 @@ function transferCredentials(data_array, index, transfer_file, flag) {
   return data_array;
 }
 
-module.exports = { transferCredentials };
+function fileCleanup(data_array, registration_file) {
+  console.log("Cleaning up file");
+  var dataArrayString = data_array.join("\n");
+  fs.writeFileSync(registration_file, dataArrayString);
+}
+
+module.exports = { transferCredentials, fileCleanup };

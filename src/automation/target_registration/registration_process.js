@@ -15,7 +15,10 @@ const {
 const { logToErrorFile, logToEventFile } = require("../../helper_funcs/logger");
 const processDataset = require("../../helper_funcs/account_parser");
 const genName = require("../../helper_funcs/name_gen");
-const { transferCredentials } = require("../../helper_funcs/file_editor");
+const {
+  transferCredentials,
+  fileCleanup,
+} = require("../../helper_funcs/file_editor");
 const getRandomMs = require("../../helper_funcs/type_speed_randomizer");
 const { system } = require("faker");
 const success_flag = 1;
@@ -32,14 +35,18 @@ function beginTargetRegistration(target_acc_file) {
 
       while (dataArray[0] != null || dataArray[0] != "") {
         let { username, password, proxyUser, proxyPass, browser } =
-          await processDataset(dataArray, 0);
+          await processDataset(dataArray);
         const page = await browser.newPage();
         await page.authenticate({ username: proxyUser, password: proxyPass });
         try {
           await page.goto("https://www.target.com/account");
         } catch (err) {
           logToErrorFile("Slow or unusable proxy. Try a different proxy.");
-          transferCredentials(dataArray, 0, target_acc_fail_file, failure_flag);
+          dataArray = transferCredentials(
+            dataArray,
+            target_acc_fail_file,
+            failure_flag
+          );
           await browser.close();
         }
         await (await page.waitForXPath(create_account)).click();
@@ -59,40 +66,25 @@ function beginTargetRegistration(target_acc_file) {
         try {
           await page.waitForXPath(success_message, { timeout: 5000 });
           logToEventFile(`${username}'s account was created successfully.`);
-          transferCredentials(
+          dataArray = transferCredentials(
             dataArray,
-            i,
             target_acc_success_file,
             success_flag
           );
         } catch (err) {
-          transferCredentials(dataArray, 0, target_acc_fail_file, failure_flag);
+          dataArray = transferCredentials(
+            dataArray,
+            target_acc_fail_file,
+            failure_flag
+          );
           logToErrorFile(
             "Something went wrong during the registration process. Moving to next account."
           );
         } finally {
           await browser.close();
+          fileCleanup(dataArray, target_acc_file);
         }
       }
-      function fileCleanup() {
-        if (dataArray.length != 0) {
-          var dataArrayString = dataArray.join("\n");
-          fs.writeFileSync(target_acc_file, dataArrayString, () => {
-            fs.readFile(target_acc_file, "utf8");
-          });
-        }
-      }
-      [
-        `exit`,
-        `SIGINT`,
-        `SIGUSR1`,
-        `SIGUSR2`,
-        `uncaughtException`,
-        `SIGTERM`,
-      ].forEach((eventType) => {
-        process.on(eventType, fileCleanup.bind(null, eventType));
-      });
-      process.exit(0);
     }
   });
 }

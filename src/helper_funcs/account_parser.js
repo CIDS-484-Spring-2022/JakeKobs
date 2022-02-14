@@ -1,8 +1,8 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
-async function processDataset(dataArray, index) {
+async function processDataset(dataArray) {
   try {
-    let userDataArr = dataArray[index].split(":");
+    let userDataArr = dataArray[0].split(":");
     let username = userDataArr[0];
     let password = userDataArr[1];
     let proxyArr = userDataArr.slice(2);
