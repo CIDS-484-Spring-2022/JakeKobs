@@ -11,6 +11,7 @@ const {
   lname_input,
   password_input,
   success_message,
+  error_message,
 } = require("./page_elements");
 const { logToErrorFile, logToEventFile } = require("../../helper_funcs/logger");
 const processDataset = require("../../helper_funcs/account_parser");
@@ -77,9 +78,12 @@ function beginTargetRegistration(target_acc_file) {
             target_acc_fail_file,
             failure_flag
           );
-          logToErrorFile(
-            "Something went wrong during the registration process. Moving to next account."
+
+          var error = await page.$eval(
+            error_message,
+            (val) => username.value + " -> " + val.innerText
           );
+          logToErrorFile(error);
         } finally {
           await browser.close();
           fileCleanup(dataArray, target_acc_file);
