@@ -24,9 +24,10 @@
   <li>Added helper functions: file_editor, name_generator, and type_speed_randomizer. Aid in execution of application.</li>
   <li>Completed overall registration automation for Target site.</li>
   <li>Gathered all page elements needed in order for automation to take place.</li>
+  <li>Parse error messages on Target's site and send back to log file for a better explanation as to what failed.</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
-  <li>Parse error messages on Target's site and send back to log file for a better explanation as to what failed.</li>
+  <li>Gather information about Walmart's registration processes/bot protection/captchas.</li>
 </ul>
