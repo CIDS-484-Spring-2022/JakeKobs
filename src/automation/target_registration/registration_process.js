@@ -40,7 +40,7 @@ function beginTargetRegistration(target_acc_file) {
         const page = await browser.newPage();
         await page.authenticate({ username: proxyUser, password: proxyPass });
         try {
-          await page.goto("https://www.target.com/account");
+          await page.goto("https://www.target.com/account", { timeout: 60000 });
         } catch (err) {
           logToErrorFile("Slow or unusable proxy. Try a different proxy.");
           dataArray = transferCredentials(
