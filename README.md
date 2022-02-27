@@ -25,9 +25,11 @@
   <li>Completed overall registration automation for Target site.</li>
   <li>Gathered all page elements needed in order for automation to take place.</li>
   <li>Parse error messages on Target's site and send back to log file for a better explanation as to what failed.</li>
+  <li>Decoupled Walmart and Target automation processes from the iterative/looping process that decides when program is complete and what accounts still need to be made.</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
-  <li>Gather information about Walmart's registration processes/bot protection/captchas.</li>
+  <li>Begin Walmart account registration automation processes.</li>
+  <li>Convert cli-based application to React and Electron.</li>
 </ul>
