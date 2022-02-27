@@ -10,3 +10,9 @@
 20/2/2022 @ 14:11:28:Slow or unusable proxy. Try a different proxy.
 20/2/2022 @ 14:13:21:Slow or unusable proxy. Try a different proxy.
 20/2/2022 @ 14:14:12:Slow or unusable proxy. Try a different proxy.
+25/2/2022 @ 20:34:51:'Account' file is empty. Please add accounts and proxies before continuing in the following format: username:password:proxy
+25/2/2022 @ 20:35:8:'Account' file is empty. Please add accounts and proxies before continuing in the following format: username:password:proxy
+25/2/2022 @ 20:35:12:'Account' file is empty. Please add accounts and proxies before continuing in the following format: username:password:proxy
+25/2/2022 @ 20:35:19:'Account' file is empty. Please add accounts and proxies before continuing in the following format: username:password:proxy
+25/2/2022 @ 20:36:0:'Account' file is empty. Please add accounts and proxies before continuing in the following format: username:password:proxy
+25/2/2022 @ 20:57:32:'Account' file is empty. Please add accounts and proxies before continuing in the following format: username:password:proxy
