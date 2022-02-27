@@ -23,17 +23,18 @@ const getRandomMs = require("../../helper_funcs/type_speed_randomizer");
 const { system } = require("faker");
 const success_flag = 1;
 const failure_flag = 0;
-async function beginTargetRegistration(
-  target_acc_file,
-  dataArray,
-  username,
-  password,
-  proxyUser,
-  proxyPass,
-  browser
-) {
+async function beginTargetRegistration(data) {
   const page = await browser.newPage();
-  await page.authenticate({ username: proxyUser, password: proxyPass });
+  const {
+    acc_file,
+    dataArray,
+    username,
+    password,
+    proxyUser,
+    proxyPass,
+    browser,
+  } = data;
+  await page.authenticate({ username: data.proxyUser, password: proxyPass });
   try {
     await page.goto("https://www.target.com/account", { timeout: 60000 });
   } catch (err) {

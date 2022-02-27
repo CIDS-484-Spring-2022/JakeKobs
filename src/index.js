@@ -22,10 +22,10 @@ function main(answer) {
   switch (Number(answer)) {
     case 1:
       beginRegistration(target_accs_file, answer);
-      console.log(target_accs_file);
       break;
     case 2:
       beginRegistration(walmart_accs_file, answer);
+      break;
   }
   return;
 }

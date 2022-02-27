@@ -1,9 +1,11 @@
 const { fs } = require("../config/config");
 const { logToErrorFile } = require("../helper_funcs/logger");
 const processDataset = require("../helper_funcs/account_parser");
+const registration_data = require("../storage_objects/registration_data");
 const {
   beginTargetRegistration,
 } = require("./target_registration/registration_process_target");
+const beginWalmartRegistration = require("./walmart_registration/registration_process_wm");
 function beginRegistration(acc_file, selection_num) {
   fs.readFile(acc_file, "utf-8", async (err, data) => {
     if (data.length == 0) {
@@ -16,18 +18,19 @@ function beginRegistration(acc_file, selection_num) {
       while (dataArray[0] != null || dataArray[0] != "") {
         let { username, password, proxyUser, proxyPass, browser } =
           await processDataset(dataArray);
+        let reg_data = new registration_data(
+          acc_file,
+          dataArray,
+          username,
+          password,
+          proxyUser,
+          proxyPass,
+          browser
+        );
         if (selection_num == "1") {
-          dataArray = await beginTargetRegistration(
-            acc_file,
-            dataArray,
-            username,
-            password,
-            proxyUser,
-            proxyPass,
-            browser
-          );
+          dataArray = await beginTargetRegistration(reg_data);
         } else if (selection_num == "2") {
-          console.log("Selected 2");
+          dataArray = await beginWalmartRegistration(reg_data);
         }
       }
     }
