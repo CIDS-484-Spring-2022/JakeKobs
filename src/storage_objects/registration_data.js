@@ -1,14 +1,5 @@
 class registration_data {
-  constructor(
-    acc_file,
-    dataArray,
-    username,
-    password,
-    proxyUser,
-    proxyPass,
-    browser
-  ) {
-    this.acc_file = acc_file;
+  constructor(dataArray, username, password, proxyUser, proxyPass, browser) {
     this.dataArray = dataArray;
     this.username = username;
     this.password = password;

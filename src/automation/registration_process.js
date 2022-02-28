@@ -19,7 +19,6 @@ function beginRegistration(acc_file, selection_num) {
         let { username, password, proxyUser, proxyPass, browser } =
           await processDataset(dataArray);
         let reg_data = new registration_data(
-          acc_file,
           dataArray,
           username,
           password,
