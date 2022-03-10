@@ -27,11 +27,12 @@
   <li>Parse error messages on Target's site and send back to log file for a better explanation as to what failed.</li>
   <li>Decoupled Walmart and Target automation processes from the iterative/looping process that decides when program is complete and what accounts still need to be made.</li>
   <li>Created skeleton of walmart's registration automation.</li>
+  <li>Handle walmart errors/events and pass them to their specified text files for debugging purposes.</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
-  <li>Handle walmart errors/events and pass them to their specified text files for debugging purposes.</li>
-  <li>Find automated solution to Walmart's press and hold captcha (bot protection).</li>
+  <li>Add a Bestbuy module</li>
+  <li>ParameterX bot protection solution (very extensive reverse engineering, so unlikely feasible relative to project due date).</li>
   <li>Convert cli-based application to React and Electron.</li>
 </ul>
