@@ -44,6 +44,7 @@
       <li>NPM (Node Package Manager) - Used for dependency management</li>
       <li>Node JS - JavaScript runtime environment that uses Chrome browser's V8 engine (can't run node apps or use terminal commands without it)</li>
       <li>git bash - easy cli shell allowing you to pull projects from github repos.</li>
+      <li>Google Chrome browser (not sure if it's needed, but install it if the application's browser isn't popping up).</li>
     </ul>
   <h3>Once you have those dependencies installed, follow the steps below to ensure the application is set up properly:</h3>
     <ol>
