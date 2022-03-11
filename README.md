@@ -28,11 +28,13 @@
   <li>Decoupled Walmart and Target automation processes from the iterative/looping process that decides when program is complete and what accounts still need to be made.</li>
   <li>Created skeleton of walmart's registration automation.</li>
   <li>Handle walmart errors/events and pass them to their specified text files for debugging purposes.</li>
+  <li>Added bestbuy config files and general setup</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
-  <li>Add a Bestbuy module</li>
-  <li>ParameterX bot protection solution (very extensive reverse engineering, so unlikely feasible relative to project due date).</li>
+  <li>Complete bestbuy automation.</li>
+  <li>ParameterX bot protection solution for Walmart (very extensive reverse engineering, so unlikely feasible relative to project due date).</li>
   <li>Convert cli-based application to React and Electron.</li>
 </ul>
+<h2>Setup Instructions/Dependency Requirements:</h2>
