@@ -5,10 +5,13 @@ const registration_data = require("../storage_objects/registration_data");
 const {
     beginTargetRegistration,
 } = require("./target_registration/registration_process_target");
+
 const {
     beginBestbuyRegistration,
 } = require("./bestbuy_registration/registration_process_bestbuy");
-const beginWalmartRegistration = require("./walmart_registration/registration_process_wm");
+const {
+    beginWalmartRegistration,
+} = require("./walmart_registration/registration_process_wm");
 
 function beginRegistration(acc_file, selection_num) {
     fs.readFile(acc_file, "utf-8", async(err, data) => {
