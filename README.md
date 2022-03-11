@@ -55,5 +55,18 @@
       Select a process to run and do note that it will fail because we haven't added any username:password:proxy credentials to any of the 
       accs_to_register.txt files. We'll cover that in the next section.</li>
     </ol>
+  <h3>Setting up account registration file (necessary for bot to run):</h3>
+    <ol>
+      <li>Navigate to the accounts file.</li>
+      <li>Select which site you'd like to create accounts for. (Currently target is fully functional and walmart works minus the PX antibot).</li>
+      <li>Within that site's folder, click on "accs_to_register" file. This is where you enter credentials in which you want to use for registration. You will need the following separated with a ":" as the delimiter (ex: email:password:proxy).
+      <ul>
+        <li>Email is the first field you need to set. Stick with a random gmail or hotmail address.</li>
+        <li>Password is the second field you need to set. Make sure it's over 8 alphanumeric characters in length. (do not include a ":" in your password).</li>
+        <li>A proxy is the final field you need to set. Make sure it's a proxy that can be authenticated (research username:password proxies). Once that is set,
+        don't add another ":" after the proxy value.</li>
+      </ul></li>
+      <li>Now make sure you save the changes and type "npm start" in the terminal and select whatever site you just entered credentials for.</li>
+    </ol>
 
 </div>
