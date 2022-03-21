@@ -42,7 +42,7 @@ const walmart_acc_success_file = path.join(
 //Bestbuy files--------------------------------------------
 const bestbuy_accs_file = path.join(
     __dirname,
-    "../../accounts/bestbuy/accs_to_register"
+    "../../accounts/bestbuy/accs_to_register.txt"
 );
 const bestbuy_acc_fail_file = path.join(
     __dirname,

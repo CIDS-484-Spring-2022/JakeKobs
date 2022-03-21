@@ -66,6 +66,7 @@ async function beginWalmartRegistration(data) {
     await (await page.waitForXPath(keep_signed_in_chkbox)).click();
     await (await page.waitForXPath(newsletter_chkbox)).click();
     await (await page.waitForXPath(submit_btn)).click();
+    await page.waitForTimeout(300000);
     try {
         await page.waitForXPath(px_block, { timeout: 5000 });
         logToEventFile(
