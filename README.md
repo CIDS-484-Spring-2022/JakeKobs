@@ -29,13 +29,17 @@
   <li>Created skeleton of walmart's registration automation.</li>
   <li>Handle walmart errors/events and pass them to their specified text files for debugging purposes.</li>
   <li>Added bestbuy config files and general setup</li>
+  <li>Bestbuy automation.</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
-  <li>Complete bestbuy automation.</li>
-  <li>ParameterX bot protection solution for Walmart (very extensive reverse engineering, so unlikely feasible relative to project due date).</li>
   <li>Convert cli-based application to React and Electron.</li>
+  <ul>
+    <li>Change file formats to JSON.</li>
+    <li>Setup barebones electron/ReactJS app.</li>
+    <li>Create new parser for JSON formatted files to distribute file data within UI.</li>
+  </ul>
 </ul>
 <div>
   <h2>Setup Instructions/Dependency Requirements:</h2>
