@@ -2,7 +2,7 @@ const {
     fs,
     target_acc_fail_file,
     target_acc_success_file,
-    target_acc_file,
+    target_accs_file,
 } = require("../../config/config");
 
 const {
@@ -24,8 +24,8 @@ const getRandomMs = require("../../helper_funcs/type_speed_randomizer");
 const success_flag = 1;
 const failure_flag = 0;
 async function beginTargetRegistration(data) {
+    let { dataArray, username, password, proxyUser, proxyPass, browser } = data;
     const page = await browser.newPage();
-    const { dataArray, username, password, proxyUser, proxyPass, browser } = data;
     await page.authenticate({ username: proxyUser, password: proxyPass });
     try {
         await page.goto("https://www.target.com/account", { timeout: 60000 });
@@ -82,7 +82,7 @@ async function beginTargetRegistration(data) {
         logToErrorFile(error);
     } finally {
         await browser.close();
-        fileCleanup(dataArray, target_acc_file);
+        fileCleanup(dataArray, target_accs_file);
     }
     return dataArray;
 }

@@ -11,7 +11,9 @@ function genName() {
         firstName = fullName.split(" ")[0];
         lastName = fullName.split(" ")[1];
     } while (firstName.length < 5);
-    phoneNum = faker.phone.phoneNumber();
+    do {
+        phoneNum = faker.phone.phoneNumber();
+    } while (phoneNum.startsWith("1"));
     return [firstName, lastName, phoneNum];
 }
 

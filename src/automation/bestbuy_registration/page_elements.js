@@ -7,6 +7,7 @@ const password_input = "//input[@id='fld-p1']";
 const confirm_password_input = "//input[@id='reenterPassword']";
 const phone_input = "//input[@id='phone']";
 const create_acc_btn = "//button[contains(text(),'Create an Account')]";
+const success_message = "//span[contains(text(),'Welcome back')]";
 module.exports = {
     account_tab,
     create_acc_tab_btn,
@@ -17,4 +18,5 @@ module.exports = {
     confirm_password_input,
     phone_input,
     create_acc_btn,
+    success_message,
 };
