@@ -12,7 +12,7 @@ const {
 const {
     beginWalmartRegistration,
 } = require("./walmart_registration/registration_process_wm");
-
+//some text
 function beginRegistration(acc_file, selection_num) {
     fs.readFile(acc_file, "utf-8", async(err, data) => {
         if (data.length == 0) {
