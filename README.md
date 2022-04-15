@@ -36,7 +36,7 @@
 <ul>
   <li>Convert cli-based application to React and Electron.</li>
   <ul>
-    <li>Please refer to "master-ui" branch for any upcoming UI changes. The master branch will strictly be for the cli version</li>
+    <li>Please refer to "master-ui" branch for any upcoming UI changes. The master branch will strictly be for the cli version.</li>
   </ul>
 </ul>
 <div>
