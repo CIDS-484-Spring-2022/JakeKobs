@@ -36,9 +36,7 @@
 <ul>
   <li>Convert cli-based application to React and Electron.</li>
   <ul>
-    <li>Change file formats to JSON.</li>
-    <li>Setup barebones electron/ReactJS app.</li>
-    <li>Create new parser for JSON formatted files to distribute file data within UI.</li>
+    <li>Please refer to "master-ui" branch for any upcoming UI changes. The master branch will strictly be for the cli version</li>
   </ul>
 </ul>
 <div>
