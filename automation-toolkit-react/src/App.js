@@ -1,7 +1,7 @@
 import "./App.css";
 import Title from "./components/Title";
 import Navbar from "./components/navbar";
-import React, { Component } from "react";
+import React from "react";
 import ViewContainer from "./components/ViewContainer";
 import { Fragment } from "react";
 function App() {
