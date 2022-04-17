@@ -22,7 +22,7 @@ function createWindow() {
   window.setTitle("Retail Automation Toolkit");
   window.on("closed", () => (window = null));
 
-  // window.setMenu(null);
+  window.setMenu(null);
   // and load the index.html of the app.
   window.loadURL("http://localhost:3000");
 

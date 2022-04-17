@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   const navClasses = "nav-item nav-link ";
   const activeClass = "active";
@@ -24,7 +24,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="nav nav-pills nav-justified">
+    <nav className="nav nav-pills nav-justified pt-1 pb-1 border-bottom">
       <Link to="/" className={activeState1} onClick={changeActiveState1}>
         Tasks
       </Link>
