@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 export default function Navbar() {
   const navClasses = "nav-item nav-link ";
   const activeClass = "active";
@@ -24,15 +25,19 @@ export default function Navbar() {
 
   return (
     <nav className="nav nav-pills nav-justified">
-      <a className={activeState1} onClick={changeActiveState1} href="/">
+      <Link to="/" className={activeState1} onClick={changeActiveState1}>
         Tasks
-      </a>
-      <a className={activeState2} onClick={changeActiveState2} href="/proxies">
+      </Link>
+      <Link to="/proxies" className={activeState2} onClick={changeActiveState2}>
         Proxies
-      </a>
-      <a className={activeState3} onClick={changeActiveState3} href="/accounts">
+      </Link>
+      <Link
+        to="/accounts"
+        className={activeState3}
+        onClick={changeActiveState3}
+      >
         Accounts
-      </a>
+      </Link>
     </nav>
   );
 }
