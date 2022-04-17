@@ -16,19 +16,30 @@ function createWindow() {
     transparent: false,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: true,
     },
   });
   window.setTitle("Retail Automation Toolkit");
   window.on("closed", () => (window = null));
 
-  window.setMenu(null);
+  // window.setMenu(null);
   // and load the index.html of the app.
   window.loadURL("http://localhost:3000");
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
+function closeWindow() {
+  const remote = window.require ? window.require("electron").remote : null;
+  const WIN = remote.getCurrentWindow();
+  WIN.close();
+}
 
+function minimizeWindow() {
+  const remote = window.require ? window.require("electron").remote : null;
+  const WIN = remote.getCurrentWindow();
+  WIN.minimize();
+}
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
