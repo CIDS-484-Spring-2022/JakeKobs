@@ -30,16 +30,14 @@
   <li>Handle walmart errors/events and pass them to their specified text files for debugging purposes.</li>
   <li>Added bestbuy config files and general setup</li>
   <li>Bestbuy automation.</li>
+  <li>Setup barebones electron/ReactJS app.</li>
+  <li>Add navigation (Single Page Application)</li>
+  <li>Change file formats to JSON.</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
-  <li>Convert cli-based application to React and Electron.</li>
-  <ul>
-    <li>Change file formats to JSON.</li>
-    <li>Setup barebones electron/ReactJS app.</li>
-    <li>Create new parser for JSON formatted files to distribute file data within UI.</li>
-  </ul>
+  <li>Create new parser for JSON formatted files to distribute file data within UI.</li>
 </ul>
 <div>
   <h2>Setup Instructions/Dependency Requirements:</h2>
