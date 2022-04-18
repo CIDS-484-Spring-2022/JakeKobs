@@ -5,9 +5,11 @@ import Tasks from "./pages/Tasks";
 import Proxies from "./pages/Proxies";
 import Accounts from "./pages/Accounts";
 import React from "react";
-import ViewContainer from "./components/ViewContainer";
 import { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import styles from "./css/styles.css";
+import "font-awesome/css/font-awesome.min.css";
+
 function App() {
   return (
     <Fragment>
@@ -25,5 +27,4 @@ function App() {
     </Fragment>
   );
 }
-
 export default App;
