@@ -1,0 +1,7 @@
+[{"groupname":"group1","accs":[
+    {"username":"username1",
+    "password":"password1"}
+]},{"groupname":"group2","accs":[
+    {"username":"username1",
+    "password":"password1"}
+]}]

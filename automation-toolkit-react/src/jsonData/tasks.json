@@ -1,0 +1,14 @@
+[
+  {"id":1,
+   "email":"randomemail@gmail.com",
+   "password":"testpass123",
+   "proxy":"Live",
+   "site":"Target",
+   "status": "idle"},
+   {"id":2,
+    "email":"randomemail@gmail.com",
+    "password":"testpass123",
+    "proxy":"Live",
+    "site":"Target",
+    "status": "idle"}
+]
