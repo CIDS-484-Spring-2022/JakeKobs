@@ -26,7 +26,7 @@ export default function TaskMenu() {
           proxy.proxies[idx] !== undefined
         ) {
           newTaskList.push({
-            id: TaskList.length > 0 ? TaskList.at(-1)["id"] + 1 : 1,
+            id: TaskList.length > 0 ? TaskList.at(-1)["id"] + (idx + 1) : 1,
             username: account.accs[idx].username,
             password: account.accs[idx].password,
             proxy: proxy.proxies[idx].proxy,

@@ -7,8 +7,8 @@ export default function TaskListItem(props) {
       <td style={{ textAlign: "center" }}>{id}</td>
       <td style={{ textAlign: "center" }}>{username}</td>
       <td style={{ textAlign: "center" }}>{password}</td>
-      <td style={{ textAlign: "center" }}>{site}</td>
       <td style={{ textAlign: "center" }}>{proxy}</td>
+      <td style={{ textAlign: "center" }}>{site}</td>
       <td style={{ textAlign: "center" }}>{status}</td>
       <td style={{ textAlign: "center" }}>
         <TaskBtns id={id} />
