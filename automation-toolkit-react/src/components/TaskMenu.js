@@ -22,8 +22,8 @@ export default function TaskMenu() {
     parsedAccList.map(function (account) {
       parsedProxyList.map(function (proxy) {
         while (
-          account.accs[idx] != undefined &&
-          proxy.proxies[idx] != undefined
+          account.accs[idx] !== undefined &&
+          proxy.proxies[idx] !== undefined
         ) {
           newTaskList.push({
             id: TaskList.length > 0 ? TaskList.at(-1)["id"] + 1 : 1,
@@ -38,9 +38,16 @@ export default function TaskMenu() {
       });
     });
     idx = 0;
-    newTaskList.map((task) => console.log(task));
+    newTaskList.map((task) => {
+      TaskList.push(task);
+    });
+    // fs.writeFileSync(
+    //   "../jsonData/tasks.json",
+    //   JSON.stringify(newTaskList),
+    //   "utf-8"
+    // );
+    TaskList.map((task) => console.log(task));
     newTaskList = [];
-    // console.log(parsedAccList[0]["accs"].length);
   }
   function onSiteChange(e) {
     siteName = e.target.value;
