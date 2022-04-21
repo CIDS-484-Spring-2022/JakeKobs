@@ -2,23 +2,56 @@ import { Modal, Button, Form } from "react-bootstrap";
 import { useState } from "react";
 import AccountList from "../jsonData/accounts.json";
 import ProxyList from "../jsonData/proxies.json";
+import TaskList from "../jsonData/tasks.json";
 export default function TaskMenu() {
   const [showModal, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let idx = 0;
   let siteName = "Walmart";
+  let newTaskList = [];
   let accGroupName = AccountList.length > 0 ? AccountList[0].groupname : "";
+  let proxyGroupName = ProxyList.length > 0 ? ProxyList[0].groupname : "";
   function onFormSubmit() {
-    console.log(siteName + " " + accGroupName);
+    let parsedAccList = AccountList.filter(
+      (acc) => acc["groupname"] === accGroupName
+    );
+    let parsedProxyList = ProxyList.filter(
+      (proxy) => proxy["groupname"] === proxyGroupName
+    );
+    parsedAccList.map(function (account) {
+      parsedProxyList.map(function (proxy) {
+        while (
+          account.accs[idx] != undefined &&
+          proxy.proxies[idx] != undefined
+        ) {
+          newTaskList.push({
+            id: TaskList.length > 0 ? TaskList.at(-1)["id"] + 1 : 1,
+            username: account.accs[idx].username,
+            password: account.accs[idx].password,
+            proxy: proxy.proxies[idx].proxy,
+            site: siteName,
+            status: "idle",
+          });
+          idx++;
+        }
+      });
+    });
+    idx = 0;
+    newTaskList.map((task) => console.log(task));
+    newTaskList = [];
+    // console.log(parsedAccList[0]["accs"].length);
   }
   function onSiteChange(e) {
     siteName = e.target.value;
-    console.log(siteName);
   }
 
   function onAccGroupChange(e) {
     accGroupName = e.target.value;
-    console.log(accGroupName);
+  }
+
+  function onProxyGroupChange(e) {
+    proxyGroupName = e.target.value;
   }
   return (
     <nav className="pt-2 pb-2 navbar navbar-light bg-light border-bottom">
@@ -70,7 +103,7 @@ export default function TaskMenu() {
             </Form.Group>
             <Form.Group className="mt-2 mb-4 w-75 m-auto">
               <Form.Label>Proxy Group</Form.Label>
-              <Form.Select>
+              <Form.Select onChange={onProxyGroupChange}>
                 {ProxyList.map((group) => {
                   return (
                     <option value={group["groupname"]}>

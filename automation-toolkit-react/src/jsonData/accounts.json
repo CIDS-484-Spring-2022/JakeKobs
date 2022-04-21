@@ -2,6 +2,8 @@
     {"username":"username1",
     "password":"password1"}
 ]},{"groupname":"group2","accs":[
+    {"username":"username22",
+    "password":"password22"},
     {"username":"username1",
-    "password":"password1"}
+        "password":"password1"}
 ]}]
