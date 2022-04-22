@@ -1,6 +1,6 @@
-[{"groupname":"Live Proxies","proxies":[
+{"proxygroups":[{"groupname":"Live Proxies","proxies":[
     {"proxy":"fiwfvwogjwoegeiwogioj"}
 ]},{"groupname":"Bart Proxies","proxies":[
     {"proxy":"fiowejjwoojgioogwegw"},
     {"proxy":"fiowejjwoojgioogwegw"}
-]}]
+]}]}

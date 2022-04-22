@@ -1,5 +1,5 @@
-[
-  {"id":"1",
+{ "tasks":[
+  {"id":1,
    "email":"randomemail@gmail.com",
    "password":"testpass123",
    "proxy":"Live",
@@ -11,4 +11,5 @@
     "proxy":"Live",
     "site":"Target",
     "status": "idle"}
-]
+]}
+

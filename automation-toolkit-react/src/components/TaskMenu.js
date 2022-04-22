@@ -7,16 +7,22 @@ export default function TaskMenu() {
   const [showModal, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const taskUrl = "http://localhost:3500/tasks";
   let idx = 0;
   let siteName = "Walmart";
   let newTaskList = [];
-  let accGroupName = AccountList.length > 0 ? AccountList[0].groupname : "";
-  let proxyGroupName = ProxyList.length > 0 ? ProxyList[0].groupname : "";
+  let accGroupName =
+    AccountList.accountgroups.length > 0
+      ? AccountList.accountgroups[0].groupname
+      : "";
+
+  let proxyGroupName =
+    ProxyList.proxygroups.length > 0 ? ProxyList.proxygroups[0].groupname : "";
   function onFormSubmit() {
-    let parsedAccList = AccountList.filter(
+    let parsedAccList = AccountList.accountgroups.filter(
       (acc) => acc["groupname"] === accGroupName
     );
-    let parsedProxyList = ProxyList.filter(
+    let parsedProxyList = ProxyList.proxygroups.filter(
       (proxy) => proxy["groupname"] === proxyGroupName
     );
     parsedAccList.map(function (account) {
@@ -26,7 +32,10 @@ export default function TaskMenu() {
           proxy.proxies[idx] !== undefined
         ) {
           newTaskList.push({
-            id: TaskList.length > 0 ? TaskList.at(-1)["id"] + (idx + 1) : 1,
+            id:
+              TaskList["tasks"].length > 0
+                ? TaskList["tasks"].at(-1)["id"] + (idx + 1)
+                : 1,
             username: account.accs[idx].username,
             password: account.accs[idx].password,
             proxy: proxy.proxies[idx].proxy,
@@ -37,16 +46,13 @@ export default function TaskMenu() {
         }
       });
     });
+
     idx = 0;
     newTaskList.map((task) => {
-      TaskList.push(task);
+      TaskList.tasks.push(task);
     });
-    // fs.writeFileSync(
-    //   "../jsonData/tasks.json",
-    //   JSON.stringify(newTaskList),
-    //   "utf-8"
-    // );
-    TaskList.map((task) => console.log(task));
+
+    // TaskList.tasks.map((task) => console.log(task));
     newTaskList = [];
   }
   function onSiteChange(e) {
@@ -99,7 +105,7 @@ export default function TaskMenu() {
             <Form.Group className="mt-2 mb-4 w-75 m-auto">
               <Form.Label>Account Group</Form.Label>
               <Form.Select onChange={onAccGroupChange}>
-                {AccountList.map((group) => {
+                {AccountList.accountgroups.map((group) => {
                   return (
                     <option value={group["groupname"]}>
                       {group["groupname"]}
@@ -111,7 +117,7 @@ export default function TaskMenu() {
             <Form.Group className="mt-2 mb-4 w-75 m-auto">
               <Form.Label>Proxy Group</Form.Label>
               <Form.Select onChange={onProxyGroupChange}>
-                {ProxyList.map((group) => {
+                {ProxyList.proxygroups.map((group) => {
                   return (
                     <option value={group["groupname"]}>
                       {group["groupname"]}
