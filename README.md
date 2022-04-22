@@ -33,13 +33,13 @@
   <li>Setup barebones electron/ReactJS app.</li>
   <li>Add navigation (Single Page Application)</li>
   <li>Change file formats to JSON.</li>
+  <li>Create new parser for JSON formatted files to distribute file data within UI.</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
   <li>Implement JSON server which allows for updating JSON in React.</li>
   <li>Create reusable components for tasks so all that's needed is json data fetching.</li>
-  <li>Create new parser for JSON formatted files to distribute file data within UI.</li>
   <li>Create modal component that gives user a UI for updating and creating tasks.</li>
   <li>Allows user to create/read/update/delete (CRUD) tasks based on selection.</li>
 </ul>

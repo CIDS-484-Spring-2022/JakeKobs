@@ -3,6 +3,7 @@ import { useState } from "react";
 import AccountList from "../jsonData/accounts.json";
 import ProxyList from "../jsonData/proxies.json";
 import TaskList from "../jsonData/tasks.json";
+import axios from "axios";
 export default function TaskMenu() {
   const [showModal, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -51,7 +52,10 @@ export default function TaskMenu() {
     newTaskList.map((task) => {
       TaskList.tasks.push(task);
     });
-
+    // axios.delete(taskUrl);
+    newTaskList.map((task) => {
+      axios.post(taskUrl, task);
+    });
     // TaskList.tasks.map((task) => console.log(task));
     newTaskList = [];
   }
