@@ -9,10 +9,10 @@ export default class Home extends Component {
     tasks: taskList,
   };
   async componentDidMount() {
-    await axios.get("http://localhost:3500/tasks").then((res) => {
+    const taskUrl = "http://localhost:3500/tasks";
+    await axios.get(taskUrl).then((res) => {
       const tasks = res.data;
       this.setState({ tasks });
-      console.log(this.state.tasks);
     });
   }
   render() {

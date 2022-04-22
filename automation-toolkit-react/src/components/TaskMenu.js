@@ -52,12 +52,9 @@ export default function TaskMenu() {
     newTaskList.map((task) => {
       TaskList.tasks.push(task);
     });
-    // axios.delete(taskUrl);
     newTaskList.map((task) => {
       axios.post(taskUrl, task);
     });
-    // TaskList.tasks.map((task) => console.log(task));
-    newTaskList = [];
   }
   function onSiteChange(e) {
     siteName = e.target.value;
@@ -70,6 +67,12 @@ export default function TaskMenu() {
   function onProxyGroupChange(e) {
     proxyGroupName = e.target.value;
   }
+
+  function deleteAllTasks() {
+    TaskList["tasks"].forEach((task) => {
+      axios.delete(taskUrl + `/${task.id}`, TaskList["tasks"]);
+    });
+  }
   return (
     <nav className="pt-2 pb-2 navbar navbar-light bg-light border-bottom">
       <form className="container-fluid justify-content-start">
@@ -80,7 +83,11 @@ export default function TaskMenu() {
         >
           Create Tasks
         </button>
-        <button className="btn btn-sm btn-danger me-4" type="button">
+        <button
+          className="btn btn-sm btn-danger me-4"
+          type="button"
+          onClick={() => deleteAllTasks()}
+        >
           Delete all Tasks
         </button>
         <button className="btn btn-sm btn-outline-success me-4" type="button">
