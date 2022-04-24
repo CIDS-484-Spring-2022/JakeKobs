@@ -1,3 +1,12 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "id": 1,
+      "username": "username1",
+      "password": "password1",
+      "proxy": "fiwfvwogjwoegeiwogioj",
+      "site": "Best Buy",
+      "status": "idle"
+    }
+  ]
 }
