@@ -39,6 +39,8 @@
 
 <h3>Pending Tasks</h3>
 <ul>
+  <li>Connect task start buttons to automation.</li>
+  <li>Create pages for proxies and accounts</li>
   <li>Create reusable components for tasks so all that's needed is json data fetching.</li>
   <li>Create modal component that gives user a UI for updating and creating tasks.</li>
   <li>Allows user to create/read/update/delete (CRUD) tasks based on selection.</li>
