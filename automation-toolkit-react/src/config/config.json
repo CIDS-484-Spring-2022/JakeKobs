@@ -1,0 +1,9 @@
+{
+    "bot_key":"",
+    "2_captcha_key":"",
+    "imap": {
+        "imapUser": "",
+        "imapPass": "",
+        "imapSite": "imap.gmail.com"
+    }
+}

@@ -1,4 +1,5 @@
 import tasks from "../jsonData/tasks.json";
+import { setExecution } from "../driver.js";
 import {
   faTrashCan,
   faPlay,
@@ -12,10 +13,14 @@ export default function TaskBtns(props) {
     let task = tasks["tasks"].filter((task) => task.taskId === id);
     axios.delete(taskUrl, task);
   };
+
+  const startTask = async (id) => {
+    setExecution(id);
+  };
   let { id } = props;
   return (
     <div>
-      <button class="btn btn-sm btn-success me-2">
+      <button class="btn btn-sm btn-success me-2" onClick={() => startTask(id)}>
         <FontAwesomeIcon icon={faPlay} />
       </button>
       <button
