@@ -1,5 +1,5 @@
 import tasks from "../jsonData/tasks.json";
-import { setExecution } from "../driver.js";
+import setExecution from "../driver.js";
 import {
   faTrashCan,
   faPlay,
@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import React from "react";
 export default function TaskBtns(props) {
   const removeTask = (id) => {
     var taskUrl = `http://localhost:3500/tasks/${id}`;
@@ -15,7 +16,7 @@ export default function TaskBtns(props) {
   };
 
   const startTask = async (id) => {
-    setExecution(id);
+    await setExecution(id);
   };
   let { id } = props;
   return (

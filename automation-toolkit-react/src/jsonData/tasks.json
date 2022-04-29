@@ -5,6 +5,22 @@
       "username": "username1",
       "password": "password1",
       "proxy": "fiwfvwogjwoegeiwogioj",
+      "site": "Walmart",
+      "status": "idle"
+    },
+    {
+      "id": 2,
+      "username": "username1",
+      "password": "password1",
+      "proxy": "fiwfvwogjwoegeiwogioj",
+      "site": "Best Buy",
+      "status": "idle"
+    },
+    {
+      "id": 3,
+      "username": "username1",
+      "password": "password1",
+      "proxy": "fiwfvwogjwoegeiwogioj",
       "site": "Best Buy",
       "status": "idle"
     }

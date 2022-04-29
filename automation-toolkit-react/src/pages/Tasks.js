@@ -1,9 +1,9 @@
+import React, { Component } from "react";
 import taskList from "../jsonData/tasks.json";
 import TaskMenu from "../components/TaskMenu";
 import TaskListItem from "../components/TaskListItem";
 import TableHead from "../components/TableHead";
 const axios = require("axios").default;
-const { Component } = require("react");
 export default class Home extends Component {
   state = {
     tasks: taskList,
