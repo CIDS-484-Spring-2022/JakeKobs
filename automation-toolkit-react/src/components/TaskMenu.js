@@ -33,7 +33,7 @@ export default function TaskMenu() {
           account.accs[idx] !== undefined &&
           proxy.proxies[idx] !== undefined
         ) {
-          newTaskList.push({
+          axios.post(taskUrl, {
             id:
               TaskList["tasks"].length > 0
                 ? TaskList["tasks"].at(-1)["id"] + (idx + 1)

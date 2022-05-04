@@ -6,6 +6,22 @@
       "password": "RandoPass15352Ffwfds",
       "proxy": "174.138.170.34:7383:LV16370139-LV1636414394-335:15404bc150",
       "site": "Best Buy",
+      "status": "Running..."
+    },
+    {
+      "id": 4,
+      "username": "username22",
+      "password": "password22",
+      "proxy": "fiowejjwoojgioogwegw",
+      "site": "Walmart",
+      "status": "idle"
+    },
+    {
+      "id": 5,
+      "username": "username1",
+      "password": "password1",
+      "proxy": "fiowejjwoojgioogwegw",
+      "site": "Walmart",
       "status": "idle"
     }
   ]

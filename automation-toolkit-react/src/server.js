@@ -1,3 +1,4 @@
+const axios = require("axios");
 const {
   account_tab,
   create_acc_tab_btn,
@@ -27,6 +28,14 @@ app
   .post("/bestbuy", async (req, res) => {
     console.log(req.body.taskData);
     let { id, username, password, proxy, site, status } = req.body.taskData;
+    await axios.put(`http://localhost:3500/tasks/${id}`, {
+      id,
+      username,
+      password,
+      proxy,
+      site,
+      status: "Running...",
+    });
     let { proxyUsername, proxyPassword, proxyServer } = ProxySplicer(proxy);
     let browser = await puppeteer.launch({
       headless: false,
