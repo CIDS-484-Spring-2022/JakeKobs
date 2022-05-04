@@ -1,26 +1,10 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "username": "username1",
-      "password": "password1",
-      "proxy": "fiwfvwogjwoegeiwogioj",
-      "site": "Walmart",
-      "status": "idle"
-    },
-    {
-      "id": 2,
-      "username": "username1",
-      "password": "password1",
-      "proxy": "fiwfvwogjwoegeiwogioj",
-      "site": "Best Buy",
-      "status": "idle"
-    },
-    {
       "id": 3,
-      "username": "username1",
-      "password": "password1",
-      "proxy": "fiwfvwogjwoegeiwogioj",
+      "username": "fgG43tgrGreege15325@gmail.com",
+      "password": "RandoPass15352Ffwfds",
+      "proxy": "174.138.170.34:7383:LV16370139-LV1636414394-335:15404bc150",
       "site": "Best Buy",
       "status": "idle"
     }

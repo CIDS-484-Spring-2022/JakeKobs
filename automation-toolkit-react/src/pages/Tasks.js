@@ -8,7 +8,7 @@ export default class Home extends Component {
   state = {
     tasks: taskList,
   };
-  async componentDidMount() {
+  async componentWillMount() {
     const taskUrl = "http://localhost:3500/tasks";
     await axios.get(taskUrl).then((res) => {
       const tasks = res.data;
