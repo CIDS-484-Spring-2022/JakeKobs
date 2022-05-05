@@ -7,16 +7,38 @@
       "proxy": "174.138.170.34:7383:LV16370139-LV1636414394-335:15404bc150",
       "site": "Best Buy",
       "proxyGroupName": "Live Proxies",
-      "status": "Running..."
+      "accGroupName": "group1",
+      "status": "Idle"
     },
     {
       "id": 4,
       "username": "username1",
       "password": "password1",
+      "proxy": "fiwfvwogjwoegeiwogioj",
+      "site": "Walmart",
+      "proxyGroupName": "Live Proxies",
+      "accGroupName": "group1",
+      "status": "idle"
+    },
+    {
+      "id": 5,
+      "username": "username1",
+      "password": "password1",
       "proxy": "fiowejjwoojgioogwegw",
       "site": "Walmart",
       "proxyGroupName": "Bart Proxies",
-      "status": "idle"
+      "accGroupName": "group1",
+      "status": "Idle"
+    },
+    {
+      "id": 6,
+      "username": "username22",
+      "password": "password22",
+      "proxy": "fiwfvwogjwoegeiwogioj",
+      "site": "Target",
+      "proxyGroupName": "Live Proxies",
+      "accGroupName": "group2",
+      "status": "Idle"
     }
   ]
 }

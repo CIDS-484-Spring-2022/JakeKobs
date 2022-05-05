@@ -43,6 +43,7 @@ export default function TaskMenu() {
             proxy: proxy.proxies[idx].proxy,
             site: siteName,
             proxyGroupName,
+            accGroupName,
             status: "idle",
           });
           idx++;

@@ -19,33 +19,44 @@ export default function TaskBtns(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   let [status, setStatus] = useState(faPlay);
-  let [taskData, setTaskData] = useState({});
   let iconBackground = "btn btn-sm me-2 ";
-  let siteName = "Walmart";
-  let newTaskList = [];
-  let accGroupName =
-    AccountList.accountgroups.length > 0
-      ? AccountList.accountgroups[0].groupname
-      : "";
-  let proxyGroupName =
-    ProxyList.proxygroups.length > 0 ? ProxyList.proxygroups[0].groupname : "";
+  let { id } = props;
+  let task = tasks["tasks"].filter((task) => task.id === id)[0];
+  let siteName = task.site;
+  let acc = task.username;
+  let proxy = task.proxy;
+  let password = task.password;
   const removeTask = (id) => {
     var taskUrl = `http://localhost:3500/tasks/${id}`;
-    let task = tasks["tasks"].filter((task) => task.id === id);
     axios.delete(taskUrl, task);
+  };
+  const submitEdit = async () => {
+    await axios.put(`http://localhost:3500/tasks/${props.id}`, {
+      id: props.id,
+      username: acc,
+      password,
+      proxy,
+      site: siteName,
+      proxyGroupName: task.proxyGroupName,
+      accGroupName: task.accGroupName,
+      status: "Idle",
+    });
   };
   function onSiteChange(e) {
     siteName = e.target.value;
   }
 
   function onAccGroupChange(e) {
-    accGroupName = e.target.value;
+    acc = e.target.value;
+
+    console.log(acc);
   }
 
   function onProxyGroupChange(e) {
-    proxyGroupName = e.target.value;
+    proxy = e.target.value;
+    console.log(proxy);
   }
-  const editTask = async (id) => {
+  const editTask = () => {
     setShow(true);
   };
   const startTask = async (id) => {
@@ -58,8 +69,6 @@ export default function TaskBtns(props) {
       console.log("Kill Process");
     }
   };
-  let { id } = props;
-  let task = tasks["tasks"].filter((task) => task.id === id);
 
   return (
     <div>
@@ -103,24 +112,22 @@ export default function TaskBtns(props) {
               </Form.Select>
             </Form.Group>
             <Form.Group className="mt-2 mb-4 w-75 m-auto">
-              <Form.Label>Account Group</Form.Label>
+              <Form.Label>Accounts Group: {task.accGroupName}</Form.Label>
               <Form.Select onChange={onAccGroupChange}>
-                {AccountList.accountgroups.map((group) => {
-                  return (
-                    <option value={group["groupname"]}>
-                      {group["groupname"]}
-                    </option>
-                  );
-                })}
+                {AccountList.accountgroups
+                  .find((account) => account.groupname == task.accGroupName)
+                  .accs.map((acc) => {
+                    return <option value={acc.username}>{acc.username}</option>;
+                  })}
               </Form.Select>
             </Form.Group>
             <Form.Group className="mt-2 mb-4 w-75 m-auto">
-              <Form.Label>Proxy</Form.Label>
+              <Form.Label>Proxy Group: {task.proxyGroupName}</Form.Label>
               <Form.Select onChange={onProxyGroupChange}>
                 {
                   //only show proxies within specified proxy group.
                   ProxyList.proxygroups
-                    .find((val) => val.groupname == task[0].proxyGroupName)
+                    .find((val) => val.groupname == task.proxyGroupName)
                     .proxies.map((proxy) => {
                       return <option value={proxy.proxy}>{proxy.proxy}</option>;
                     })
@@ -130,7 +137,7 @@ export default function TaskBtns(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={submitEdit}>
             Save
           </Button>
           <Button variant="danger" onClick={handleClose}>
