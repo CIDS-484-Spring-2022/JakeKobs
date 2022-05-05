@@ -19,6 +19,7 @@ export default function TaskBtns(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   let [status, setStatus] = useState(faPlay);
+  let [taskData, setTaskData] = useState({});
   let iconBackground = "btn btn-sm me-2 ";
   let siteName = "Walmart";
   let newTaskList = [];
@@ -30,7 +31,7 @@ export default function TaskBtns(props) {
     ProxyList.proxygroups.length > 0 ? ProxyList.proxygroups[0].groupname : "";
   const removeTask = (id) => {
     var taskUrl = `http://localhost:3500/tasks/${id}`;
-    let task = tasks["tasks"].filter((task) => task.taskId === id);
+    let task = tasks["tasks"].filter((task) => task.id === id);
     axios.delete(taskUrl, task);
   };
   function onSiteChange(e) {
@@ -58,6 +59,8 @@ export default function TaskBtns(props) {
     }
   };
   let { id } = props;
+  let task = tasks["tasks"].filter((task) => task.id === id);
+
   return (
     <div>
       <button
@@ -112,15 +115,16 @@ export default function TaskBtns(props) {
               </Form.Select>
             </Form.Group>
             <Form.Group className="mt-2 mb-4 w-75 m-auto">
-              <Form.Label>Proxy Group</Form.Label>
+              <Form.Label>Proxy</Form.Label>
               <Form.Select onChange={onProxyGroupChange}>
-                {ProxyList.proxygroups.map((group) => {
-                  return (
-                    <option value={group["groupname"]}>
-                      {group["groupname"]}
-                    </option>
-                  );
-                })}
+                {
+                  //only show proxies within specified proxy group.
+                  ProxyList.proxygroups
+                    .find((val) => val.groupname == task[0].proxyGroupName)
+                    .proxies.map((proxy) => {
+                      return <option value={proxy.proxy}>{proxy.proxy}</option>;
+                    })
+                }
               </Form.Select>
             </Form.Group>
           </Form>

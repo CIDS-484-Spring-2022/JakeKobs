@@ -42,6 +42,7 @@ export default function TaskMenu() {
             password: account.accs[idx].password,
             proxy: proxy.proxies[idx].proxy,
             site: siteName,
+            proxyGroupName,
             status: "idle",
           });
           idx++;
