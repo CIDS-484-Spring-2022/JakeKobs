@@ -123,7 +123,7 @@ export default function TaskBtns(props) {
             </Form.Group>
             <Form.Group className="mt-2 mb-4 w-75 m-auto">
               <Form.Label>Proxy Group: {task.proxyGroupName}</Form.Label>
-              <Form.Select onChange={onProxyGroupChange}>
+              <Form.Select onChange={onProxyGroupChange} on>
                 {
                   //only show proxies within specified proxy group.
                   ProxyList.proxygroups
