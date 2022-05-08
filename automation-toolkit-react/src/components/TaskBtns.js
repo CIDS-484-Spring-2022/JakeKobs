@@ -1,10 +1,9 @@
 import tasks from "../jsonData/tasks.json";
 import setExecution from "../driver.js";
-import { useState, setState } from "react";
+import { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import AccountList from "../jsonData/accounts.json";
 import ProxyList from "../jsonData/proxies.json";
-import TaskList from "../jsonData/tasks.json";
 import {
   faTrashCan,
   faPlay,
@@ -17,7 +16,6 @@ import React from "react";
 export default function TaskBtns(props) {
   const [showModal, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   let [status, setStatus] = useState(faPlay);
   let iconBackground = "btn btn-sm me-2 ";
   let { id } = props;
@@ -61,7 +59,7 @@ export default function TaskBtns(props) {
   };
   const startTask = async (id) => {
     let currentStatus;
-    currentStatus = status == faPlay ? faStop : faPlay;
+    currentStatus = status === faPlay ? faStop : faPlay;
     setStatus(currentStatus);
     if (status === faPlay) {
       await setExecution(id);
@@ -75,7 +73,7 @@ export default function TaskBtns(props) {
       <button
         class={
           (iconBackground =
-            status == faPlay
+            status === faPlay
               ? iconBackground + "btn-success"
               : iconBackground + "btn-warning")
         }
@@ -115,7 +113,7 @@ export default function TaskBtns(props) {
               <Form.Label>Accounts Group: {task.accGroupName}</Form.Label>
               <Form.Select onChange={onAccGroupChange}>
                 {AccountList.accountgroups
-                  .find((account) => account.groupname == task.accGroupName)
+                  .find((account) => account.groupname === task.accGroupName)
                   .accs.map((acc) => {
                     return <option value={acc.username}>{acc.username}</option>;
                   })}
@@ -127,7 +125,7 @@ export default function TaskBtns(props) {
                 {
                   //only show proxies within specified proxy group.
                   ProxyList.proxygroups
-                    .find((val) => val.groupname == task.proxyGroupName)
+                    .find((val) => val.groupname === task.proxyGroupName)
                     .proxies.map((proxy) => {
                       return <option value={proxy.proxy}>{proxy.proxy}</option>;
                     })

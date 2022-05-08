@@ -7,9 +7,7 @@ import Accounts from "./pages/Accounts";
 import React from "react";
 import { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import styles from "./css/styles.css";
 import "font-awesome/css/font-awesome.min.css";
-const axios = require("axios").default;
 function App() {
   return (
     <Fragment>

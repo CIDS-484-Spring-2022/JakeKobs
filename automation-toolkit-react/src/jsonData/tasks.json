@@ -19,6 +19,16 @@
       "proxyGroupName": "Live Proxies",
       "accGroupName": "group1",
       "status": "Running..."
+    },
+    {
+      "id": 3,
+      "username": "testuser12345@gmail.com",
+      "password": "Password123@#!@#",
+      "proxy": "174.138.170.34:7383:LV16370139-LV1636414394-335:15404bc150",
+      "site": "Walmart",
+      "proxyGroupName": "Live Proxies",
+      "accGroupName": "group1",
+      "status": "Running..."
     }
   ]
 }
