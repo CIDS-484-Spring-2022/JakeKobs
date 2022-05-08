@@ -35,15 +35,17 @@
   <li>Change file formats to JSON.</li>
   <li>Create new parser for JSON formatted files to distribute file data within UI.</li>
   <li>Implement JSON server which allows for updating JSON in React.</li>
+  <li>Connect task start buttons to automation.</li>
+  <li>Create reusable components for tasks so all that's needed is json data fetching.</li>
+  <li>Create modal component that gives user a UI for updating and creating tasks.</li>
+  <li>Allows user to create/read/update/delete (CRUD) tasks based on selection.</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
-  <li>Connect task start buttons to automation.</li>
-  <li>Create pages for proxies and accounts</li>
-  <li>Create reusable components for tasks so all that's needed is json data fetching.</li>
-  <li>Create modal component that gives user a UI for updating and creating tasks.</li>
-  <li>Allows user to create/read/update/delete (CRUD) tasks based on selection.</li>
+  <li>Create pages for proxies and accounts.</li>
+  <li>Update UI with status of automation.</li>
+  <li>Create separate tab in accounts tab that displays successfully created accounts.</li>
 </ul>
 <div>
   <h2>Setup Instructions/Dependency Requirements:</h2>
