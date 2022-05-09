@@ -52,7 +52,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "electron-react": "concurrently \"node src/server.js\" \"npx json-server -p 3500 -w src/jsonData/tasks.json\" \"SET BROWSER=none&&npm run start\" \"wait-on http://localhost:3000 && electron .\""
+        "electron-react": "concurrently \"node src/server.js\" \"npx json-server -p 3500 -w src/jsonData/tasks.json\" \"npx json-server -p 3600 -w src/jsonData/proxies.json\" \"npx json-server -p 3700 -w src/jsonData/Accounts.json\" \"SET BROWSER=none&&npm run start\" \"wait-on http://localhost:3000 && electron .\""
     },
     "eslintConfig": {
         "extends": [
