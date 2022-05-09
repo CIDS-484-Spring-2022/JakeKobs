@@ -40,7 +40,7 @@ export default function TaskMenu() {
                 : 1,
             username: account.accs[idx].username,
             password: account.accs[idx].password,
-            proxy: proxy.proxies[idx].proxy,
+            proxy: proxy.proxies[idx],
             site: siteName,
             proxyGroupName,
             accGroupName,
@@ -52,9 +52,9 @@ export default function TaskMenu() {
     });
 
     idx = 0;
-    newTaskList.map((task) => {
-      TaskList.tasks.push(task);
-    });
+    // newTaskList.map((task) => {
+    //   TaskList.tasks.push(task);
+    // });
     newTaskList.map((task) => {
       axios.post(taskUrl, task);
     });
@@ -72,8 +72,8 @@ export default function TaskMenu() {
   }
 
   function deleteAllTasks() {
-    TaskList["tasks"].forEach((task) => {
-      axios.delete(taskUrl + `/${task.id}`, TaskList["tasks"]);
+    TaskList["tasks"].forEach(async (task) => {
+      await axios.delete(taskUrl + `/${task.id}`, TaskList["tasks"]);
     });
   }
   return (

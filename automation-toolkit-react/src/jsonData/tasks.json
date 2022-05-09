@@ -2,33 +2,53 @@
   "tasks": [
     {
       "id": 1,
-      "username": "testuser12345@gmail.com",
-      "password": "Password123@#!@#",
-      "proxy": "174.138.170.34:7383:LV16370139-LV1636414394-335:15404bc150",
-      "site": "Best Buy",
-      "proxyGroupName": "Live Proxies",
-      "accGroupName": "group1",
-      "status": "Running..."
+      "username": "testuser886442@gmail.com",
+      "password": "SomePassword88532!@",
+      "proxy": "38.131.141.180:5249:RS0456575:BDKTWY35",
+      "site": "Target",
+      "proxyGroupName": "newgroup",
+      "accGroupName": "group2",
+      "status": "idle"
     },
     {
       "id": 2,
-      "username": "testuser12345@gmail.com",
-      "password": "Password123@#!@#",
-      "proxy": "174.138.170.34:7383:LV16370139-LV1636414394-335:15404bc150",
-      "site": "Target",
-      "proxyGroupName": "Live Proxies",
-      "accGroupName": "group1",
-      "status": "Running..."
+      "username": "testuser886442@gmail.com",
+      "password": "SomePassword88532!@",
+      "proxy": "38.131.141.180:5249:RS0456575:BDKTWY35",
+      "site": "Best Buy",
+      "proxyGroupName": "newgroup",
+      "accGroupName": "group2",
+      "status": "idle"
     },
     {
       "id": 3,
-      "username": "testuser12345@gmail.com",
-      "password": "Password123@#!@#",
-      "proxy": "174.138.170.34:7383:LV16370139-LV1636414394-335:15404bc150",
-      "site": "Walmart",
-      "proxyGroupName": "Live Proxies",
-      "accGroupName": "group1",
-      "status": "Running..."
+      "username": "someuser864585@gmail.com",
+      "password": "password145@@",
+      "proxy": "38.131.141.243:5034:RS0456575:BDKTWY35",
+      "site": "Best Buy",
+      "proxyGroupName": "newgroup",
+      "accGroupName": "group2",
+      "status": "idle"
+    },
+    {
+      "id": 5,
+      "username": "someuser85423585@gmail.com",
+      "password": "password145@@",
+      "proxy": "38.131.141.109:5101:RS0456575:BDKTWY35",
+      "site": "Best Buy",
+      "proxyGroupName": "newgroup",
+      "accGroupName": "group2",
+      "status": "idle"
+    },
+    {
+      "id": 4,
+      "username": "someuser834685@gmail.com",
+      "password": "password145@@",
+      "proxy": "38.131.141.235:5119:RS0456575:BDKTWY35",
+      "site": "Best Buy",
+      "proxyGroupName": "newgroup",
+      "accGroupName": "group2",
+      "status": "idle"
     }
   ]
 }

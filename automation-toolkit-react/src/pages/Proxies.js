@@ -6,7 +6,7 @@ import ProxyListItem from "../components/ProxyListItem";
 import axios from "axios";
 export default function Proxies() {
   const [proxyGroup, setProxyGroup] = useState(
-    ProxyList.proxygroups[0].groupname
+    ProxyList.proxygroups.length > 0 ? ProxyList.proxygroups[0].groupname : ""
   );
 
   const callback = useCallback((proxyGroup) => {
@@ -19,14 +19,11 @@ export default function Proxies() {
         <ProxyTableHead />
         <tbody>
           {ProxyList.proxygroups
-            .filter((group) => {
-              return group.groupname === proxyGroup;
-            })
+            .filter((group) => group.groupname === proxyGroup)
             .map((proxyGroup) => {
-              return proxyGroup.proxies.map((prox, idx) => {
-                console.log(prox);
-                return <ProxyListItem key={idx} item={prox} />;
-              });
+              return proxyGroup.proxies.map((prox, idx) => (
+                <ProxyListItem key={idx} item={prox} />
+              ));
             })}
         </tbody>
       </table>
