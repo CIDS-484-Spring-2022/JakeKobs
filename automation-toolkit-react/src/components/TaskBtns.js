@@ -127,7 +127,7 @@ export default function TaskBtns(props) {
                   ProxyList.proxygroups
                     .find((val) => val.groupname === task.proxyGroupName)
                     .proxies.map((proxy) => {
-                      return <option value={proxy.proxy}>{proxy.proxy}</option>;
+                      return <option value={proxy}>{proxy}</option>;
                     })
                 }
               </Form.Select>

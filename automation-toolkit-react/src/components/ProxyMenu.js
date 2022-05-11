@@ -7,47 +7,50 @@ export default function ProxyMenu({ parentCallback }) {
   const [showModal, setShow] = useState(false);
   const [isDisabled, setDisabled] = useState(true);
   const [isDisabled2, setDisabled2] = useState(true);
+  const [proxyGroup, setProxyGroup] = useState(
+    ProxyList.proxygroups[0].groupname
+  );
   const handleClose = () => setShow(false);
-  //   const handleShow = () => setShow(true);
-  let proxyGroupName = "";
-  let proxyListItems = "";
+  // const handleShow = () => setShow(true);
+  const [proxyGroupName, setProxyGroupName] = useState("");
+  const [proxyListItems, setProxyListItems] = useState("");
+
   const AddProxyGroup = () => {
     console.log("Add proxy group clicked");
     setShow(true);
   };
-  const IsDisabled = () => {
-    return proxyGroupName.length !== 0 || proxyListItems.length !== 0;
-  };
+
   const SubmitProxyGroup = async () => {
-    console.log(proxyGroupName);
-    console.log(proxyListItems);
     await axios.post("http://localhost:3600/proxygroups", {
-      id: ProxyList.proxygroups.length + 1,
+      id: ProxyList.proxygroups.indexOf(-1).id + 1,
       groupname: proxyGroupName,
       proxies: proxyListItems,
     });
   };
-
+  const DeleteCurrentGroup = async () => {
+    let groupId = ProxyList.proxygroups.find(
+      (group) => group.groupname == proxyGroup
+    ).id;
+    console.log(groupId);
+    await axios.delete(`http://localhost:3600/proxygroups/${groupId}`);
+  };
   const OnGroupNameChange = (e) => {
-    if (e.target.value.length > 0) {
+    if (e.target.value !== "") {
       setDisabled(false);
-      proxyGroupName = e.target.value;
-      return;
+      setProxyGroupName(e.target.value);
+    } else {
+      setDisabled(true);
     }
-    setDisabled(true);
   };
 
   const OnProxyListChange = (e) => {
     if (e.target.value !== "") {
       setDisabled2(false);
-      proxyListItems = e.target.value.split("\n");
+      setProxyListItems(e.target.value.split("\n"));
     } else {
       setDisabled2(true);
     }
   };
-  const [proxyGroup, setProxyGroup] = useState(
-    ProxyList.proxygroups[0].groupname
-  );
   return (
     <nav className="pt-2 pb-2 navbar navbar-light bg-light border-bottom">
       <form className="container-fluid justify-content-start">
@@ -61,7 +64,11 @@ export default function ProxyMenu({ parentCallback }) {
         <button className="btn btn-sm btn-outline-success me-4" type="button">
           Add Proxies to Current Group
         </button>
-        <button className="btn btn-sm btn-danger me-4" type="button">
+        <button
+          className="btn btn-sm btn-danger me-4"
+          type="button"
+          onClick={() => DeleteCurrentGroup()}
+        >
           Delete Current Group
         </button>
 
@@ -70,6 +77,7 @@ export default function ProxyMenu({ parentCallback }) {
           onChange={(e) => {
             setProxyGroup(e.target.value);
             parentCallback(e.target.value);
+            console.log(proxyGroup);
           }}
         >
           {ProxyList.proxygroups.map((group) => {
@@ -95,7 +103,7 @@ export default function ProxyMenu({ parentCallback }) {
                 className="w-100"
                 placeholder="Enter proxy group name"
                 onChange={OnGroupNameChange}
-              ></input>
+              />
             </Form.Group>
             <Form.Group className="mt-2 mb-4 m-auto">
               <textarea

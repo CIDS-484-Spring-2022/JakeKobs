@@ -22,7 +22,13 @@ export default function Proxies() {
             .filter((group) => group.groupname === proxyGroup)
             .map((proxyGroup) => {
               return proxyGroup.proxies.map((prox, idx) => (
-                <ProxyListItem key={idx} item={prox} />
+                <ProxyListItem
+                  key={idx}
+                  item={prox}
+                  index={idx}
+                  group={proxyGroup.groupname}
+                  id={proxyGroup.id}
+                />
               ));
             })}
         </tbody>

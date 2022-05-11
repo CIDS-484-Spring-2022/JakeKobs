@@ -1,4 +1,7 @@
 import React from "react";
+import setExecution from "../driver.js";
+import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useState } from "react";
 import AccountList from "../jsonData/accounts.json";
@@ -9,6 +12,7 @@ export default function TaskMenu() {
   const [showModal, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let [status, setStatus] = useState(faPlay);
   const taskUrl = "http://localhost:3500/tasks";
   let idx = 0;
   let siteName = "Walmart";
@@ -52,13 +56,26 @@ export default function TaskMenu() {
     });
 
     idx = 0;
-    // newTaskList.map((task) => {
-    //   TaskList.tasks.push(task);
-    // });
+    newTaskList.map((task) => {
+      TaskList.tasks.push(task);
+    });
     newTaskList.map((task) => {
       axios.post(taskUrl, task);
     });
   }
+
+  const StartAllTasks = async () => {
+    let currentStatus;
+    currentStatus = status === faPlay ? faStop : faPlay;
+    setStatus(currentStatus);
+    if (status === faPlay) {
+      TaskList.tasks.forEach(async (task) => {
+        await setExecution(task.id);
+      });
+    } else {
+      console.log("Kill Process");
+    }
+  };
   function onSiteChange(e) {
     siteName = e.target.value;
   }
@@ -93,7 +110,11 @@ export default function TaskMenu() {
         >
           Delete all Tasks
         </button>
-        <button className="btn btn-sm btn-outline-success me-4" type="button">
+        <button
+          className="btn btn-sm btn-outline-success me-4"
+          type="button"
+          onClick={() => StartAllTasks()}
+        >
           Start all Tasks
         </button>
       </form>
