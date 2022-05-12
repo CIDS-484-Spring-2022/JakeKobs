@@ -1,16 +1,6 @@
 {
   "accountgroups": [
     {
-      "id": 1,
-      "groupname": "group1",
-      "accs": [
-        {
-          "username": "testuser12345@gmail.com",
-          "password": "Password123@#!@#"
-        }
-      ]
-    },
-    {
       "id": 2,
       "groupname": "group2",
       "accs": [
@@ -25,6 +15,20 @@
         {
           "username": "someuser85423585@gmail.com",
           "password": "password145@@"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "groupname": "group1",
+      "accs": [
+        {
+          "username": "fiwojgoiej@hotmail.com",
+          "password": "fwojfojeoifw"
+        },
+        {
+          "username": "jfweiof@hotmail.com",
+          "password": "fwioejoiwjeiog"
         }
       ]
     }

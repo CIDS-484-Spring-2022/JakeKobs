@@ -10,6 +10,7 @@ export default function AccountMenu({ parentCallback }) {
   const showAddModal = () => setShowAddAccModal(true);
   const showUpdateModal = () => setShowUpdateAccModal(true);
   const handleClose = () => setShowAddAccModal(false);
+  const handleClose2 = () => setShowUpdateAccModal(false);
   const [accountGroup, setAccountGroup] = useState(
     AccountList.accountgroups.length > 0
       ? AccountList.accountgroups[0].groupname
@@ -29,7 +30,7 @@ export default function AccountMenu({ parentCallback }) {
   };
 
   const AddToCurrentGroup = () => {
-    console.log("current group btn");
+    showUpdateModal();
   };
 
   const SubmitAccountGroup = async () => {
@@ -44,6 +45,25 @@ export default function AccountMenu({ parentCallback }) {
       id: AccountList.accountgroups.indexOf(-1).id,
       groupname: accountGroup,
       accs: formattedAccList,
+    });
+  };
+
+  const SubmitUpdateAccountGroup = async () => {
+    let groupObj = AccountList.accountgroups.find(
+      (group) => group.groupname == accountGroup
+    );
+    let accountGroupId = AccountList.accountgroups.find(
+      (group) => group.groupname == accountGroup
+    ).id;
+    accountList.forEach((acc) => {
+      groupObj.accs.push({
+        username: acc.split(":")[0],
+        password: acc.split(":")[1],
+      });
+    });
+
+    await axios.patch(`http://localhost:3700/accountgroups/${accountGroupId}`, {
+      accs: groupObj.accs,
     });
   };
   const DeleteCurrentGroup = async () => {
@@ -130,6 +150,44 @@ export default function AccountMenu({ parentCallback }) {
             Save
           </Button>
           <Button variant="danger" onClick={handleClose}>
+            Exit
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        className="w-150"
+        show={showUpdateAccModal}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header>
+          <Modal.Title style={{ margin: "auto" }}>
+            Add Accounts to {accountGroup}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mt-2 mb-4 m-auto">
+              <textarea
+                style={{ resize: "none" }}
+                className="w-100"
+                onChange={OnGroupListChange}
+              ></textarea>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="primary"
+            type="submit"
+            disabled={accountGroup.length === 0 || accountList.length === 0}
+            onClick={SubmitUpdateAccountGroup}
+          >
+            Save
+          </Button>
+          <Button variant="danger" onClick={handleClose2}>
             Exit
           </Button>
         </Modal.Footer>
