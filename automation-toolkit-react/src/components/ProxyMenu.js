@@ -5,26 +5,43 @@ import { Modal, Button, Form } from "react-bootstrap";
 
 export default function ProxyMenu({ parentCallback }) {
   const [showModal, setShow] = useState(false);
+  const [showModal2, setModalShow2] = useState(false);
   const [isDisabled, setDisabled] = useState(true);
   const [isDisabled2, setDisabled2] = useState(true);
   const [proxyGroup, setProxyGroup] = useState(
     ProxyList.proxygroups[0].groupname
   );
   const handleClose = () => setShow(false);
+  const handleCloseModal2 = () => setModalShow2(false);
   // const handleShow = () => setShow(true);
   const [proxyGroupName, setProxyGroupName] = useState("");
-  const [proxyListItems, setProxyListItems] = useState("");
+  const [proxyListItems, setProxyListItems] = useState([]);
 
   const AddProxyGroup = () => {
     console.log("Add proxy group clicked");
     setShow(true);
   };
-
+  const AddToCurrentGroup = () => {
+    setModalShow2(true);
+  };
   const SubmitProxyGroup = async () => {
     await axios.post("http://localhost:3600/proxygroups", {
       id: ProxyList.proxygroups.indexOf(-1).id + 1,
       groupname: proxyGroupName,
       proxies: proxyListItems,
+    });
+  };
+
+  const UpdateProxyGroup = async (e) => {
+    let groupObj = ProxyList.proxygroups.find(
+      (group) => group.groupname == proxyGroup
+    );
+    let updatedList = proxyListItems.forEach((proxy) => {
+      groupObj.proxies.push(proxy);
+    });
+    console.log(groupObj.proxies);
+    await axios.patch(`http://localhost:3600/proxygroups/${groupObj.id}`, {
+      proxies: groupObj.proxies,
     });
   };
   const DeleteCurrentGroup = async () => {
@@ -61,7 +78,11 @@ export default function ProxyMenu({ parentCallback }) {
         >
           Add Proxy Group
         </button>
-        <button className="btn btn-sm btn-outline-success me-4" type="button">
+        <button
+          className="btn btn-sm btn-outline-success me-4"
+          type="button"
+          onClick={AddToCurrentGroup}
+        >
           Add Proxies to Current Group
         </button>
         <button
@@ -124,6 +145,45 @@ export default function ProxyMenu({ parentCallback }) {
             Save
           </Button>
           <Button variant="danger" onClick={handleClose}>
+            Exit
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        className="w-150"
+        show={showModal2}
+        onHide={handleCloseModal2}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header>
+          <Modal.Title style={{ margin: "auto" }}>
+            Add proxies to existing group: {proxyGroup}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mt-2 mb-4 m-auto">
+              <textarea
+                placeholder="Add proxies on separate lines"
+                style={{ resize: "none" }}
+                className="w-100"
+                onChange={OnProxyListChange}
+              ></textarea>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="primary"
+            type="submit"
+            disabled={isDisabled2 !== false}
+            onClick={UpdateProxyGroup}
+          >
+            Save
+          </Button>
+          <Button variant="danger" onClick={handleCloseModal2}>
             Exit
           </Button>
         </Modal.Footer>

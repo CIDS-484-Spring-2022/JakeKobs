@@ -44,11 +44,11 @@
       "id": 4,
       "username": "someuser834685@gmail.com",
       "password": "password145@@",
-      "proxy": "212.192.209.30:3128:rsp46:s3m0664ij8xik",
+      "proxy": "212.192.209.47:3128:rsp46:s3m0664ij8xik",
       "site": "Best Buy",
       "proxyGroupName": "newgroup",
       "accGroupName": "group2",
-      "status": "idle"
+      "status": "Idle"
     }
   ]
 }

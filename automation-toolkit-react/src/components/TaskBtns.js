@@ -121,13 +121,13 @@ export default function TaskBtns(props) {
             </Form.Group>
             <Form.Group className="mt-2 mb-4 w-75 m-auto">
               <Form.Label>Proxy Group: {task.proxyGroupName}</Form.Label>
-              <Form.Select onChange={onProxyGroupChange} on>
+              <Form.Select onChange={onProxyGroupChange}>
                 {
                   //only show proxies within specified proxy group.
                   ProxyList.proxygroups
-                    .find((val) => val.groupname === task.proxyGroupName)
-                    .proxies.map((proxy) => {
-                      return <option value={proxy}>{proxy}</option>;
+                    .find((val) => val.groupname == task.proxyGroupName)
+                    .proxies.map((prox) => {
+                      return <option value={prox}>{prox}</option>;
                     })
                 }
               </Form.Select>
