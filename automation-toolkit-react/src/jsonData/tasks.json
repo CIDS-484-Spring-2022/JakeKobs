@@ -49,6 +49,26 @@
       "proxyGroupName": "newgroup",
       "accGroupName": "group2",
       "status": "Idle"
+    },
+    {
+      "id": 7,
+      "username": "someuser85423585@gmail.com",
+      "password": "password145@@",
+      "proxy": "38.131.141.57:5036:RS0456575:BDKTWY35",
+      "site": "Target",
+      "proxyGroupName": "bart proxies",
+      "accGroupName": "group2",
+      "status": "idle"
+    },
+    {
+      "id": 6,
+      "username": "someuser864585@gmail.com",
+      "password": "password145@@",
+      "proxy": "38.131.141.201:5234:RS0456575:BDKTWY35",
+      "site": "Target",
+      "proxyGroupName": "bart proxies",
+      "accGroupName": "group2",
+      "status": "idle"
     }
   ]
 }

@@ -5,26 +5,15 @@ import TaskListItem from "../components/TaskListItem";
 import TableHead from "../components/TableHead";
 const axios = require("axios").default;
 export default class Home extends Component {
-  state = {
-    tasks: taskList,
-  };
-  async componentWillMount() {
-    const taskUrl = "http://localhost:3500/tasks";
-    await axios.get(taskUrl).then((res) => {
-      const tasks = res.data;
-      this.setState({ tasks });
-    });
-  }
   render() {
-    let { tasks } = this.state;
-    if (tasks.length > 0) {
+    if (taskList.tasks.length > 0) {
       return (
         <div>
           <TaskMenu />
           <table className="table table-striped">
             <TableHead />
             <tbody>
-              {tasks.map((task) => {
+              {taskList.tasks.map((task) => {
                 return <TaskListItem task={task} />;
               })}
             </tbody>
