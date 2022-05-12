@@ -36,7 +36,7 @@ export default function ProxyMenu({ parentCallback }) {
     let groupObj = ProxyList.proxygroups.find(
       (group) => group.groupname == proxyGroup
     );
-    let updatedList = proxyListItems.forEach((proxy) => {
+    proxyListItems.forEach((proxy) => {
       groupObj.proxies.push(proxy);
     });
     console.log(groupObj.proxies);

@@ -2,7 +2,7 @@ import tasks from "../jsonData/tasks.json";
 import setExecution from "../driver.js";
 import { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import AccountList from "../jsonData/accounts.json";
+import AccountList from "../jsonData/Accounts.json";
 import ProxyList from "../jsonData/proxies.json";
 import {
   faTrashCan,

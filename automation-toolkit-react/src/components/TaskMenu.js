@@ -4,7 +4,7 @@ import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useState } from "react";
-import AccountList from "../jsonData/accounts.json";
+import AccountList from "../jsonData/Accounts.json";
 import ProxyList from "../jsonData/proxies.json";
 import TaskList from "../jsonData/tasks.json";
 import axios from "axios";

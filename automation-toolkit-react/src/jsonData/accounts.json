@@ -1,13 +1,36 @@
-{"accountgroups":[{"groupname":"group1","accs":[
-    {"username":"testuser12345@gmail.com",
-    "password":"Password123@#!@#"}
-]},{"groupname":"group2","accs":[
-    {"username":"testuser886442@gmail.com",
-    "password":"SomePassword88532!@"},
-    {"username":"someuser864585@gmail.com",
-    "password":"password145@@"},
-    {"username":"someuser834685@gmail.com",
-    "password":"password145@@"},
-    {"username":"someuser85423585@gmail.com",
-    "password":"password145@@"}
-]}]}
+{
+  "accountgroups": [
+    {
+      "id": 1,
+      "groupname": "group1",
+      "accs": [
+        {
+          "username": "testuser12345@gmail.com",
+          "password": "Password123@#!@#"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "groupname": "group2",
+      "accs": [
+        {
+          "username": "testuser886442@gmail.com",
+          "password": "SomePassword88532!@"
+        },
+        {
+          "username": "someuser864585@gmail.com",
+          "password": "password145@@"
+        },
+        {
+          "username": "someuser834685@gmail.com",
+          "password": "password145@@"
+        },
+        {
+          "username": "someuser85423585@gmail.com",
+          "password": "password145@@"
+        }
+      ]
+    }
+  ]
+}
