@@ -39,13 +39,15 @@
   <li>Create reusable components for tasks so all that's needed is json data fetching.</li>
   <li>Create modal component that gives user a UI for updating and creating tasks.</li>
   <li>Allows user to create/read/update/delete (CRUD) tasks based on selection.</li>
+  <li>Create pages for proxies and accounts.</li>
+  <li>Update UI with status of automation.</li>
 </ul>
 
 <h3>Pending Tasks</h3>
 <ul>
-  <li>Create pages for proxies and accounts.</li>
-  <li>Update UI with status of automation.</li>
   <li>Create separate tab in accounts tab that displays successfully created accounts.</li>
+  <li>Fix bugs that deal with rendering of UI data.</li>
+  <li>Update automation statuses so user can see what steps take place during automation.</li>
 </ul>
 <div>
   <h2>Setup Instructions/Dependency Requirements:</h2>
