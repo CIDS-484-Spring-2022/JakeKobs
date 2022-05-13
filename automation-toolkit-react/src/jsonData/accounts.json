@@ -1,13 +1,19 @@
 {
   "accountgroups": [
     {
+      "id": 1,
+      "groupname": "group1",
+      "accs": [
+        {
+          "username": "jfweiof@hotmail.com",
+          "password": "fwioejoiwjeiog"
+        }
+      ]
+    },
+    {
       "id": 2,
       "groupname": "group2",
       "accs": [
-        {
-          "username": "testuser886442@gmail.com",
-          "password": "SomePassword88532!@"
-        },
         {
           "username": "someuser864585@gmail.com",
           "password": "password145@@"
@@ -15,20 +21,6 @@
         {
           "username": "someuser85423585@gmail.com",
           "password": "password145@@"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "groupname": "group1",
-      "accs": [
-        {
-          "username": "fiwojgoiej@hotmail.com",
-          "password": "fwojfojeoifw"
-        },
-        {
-          "username": "jfweiof@hotmail.com",
-          "password": "fwioejoiwjeiog"
         }
       ]
     }

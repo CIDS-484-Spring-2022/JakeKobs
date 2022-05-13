@@ -1,74 +1,44 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "username": "testuser12345@gmail.com",
-      "password": "Password123@#!@#",
-      "proxy": "212.192.209.28:3128:rsp46:s3m0664ij8xik",
-      "site": "Walmart",
-      "proxyGroupName": "newgroup",
-      "accGroupName": "group1",
-      "status": "idle"
-    },
-    {
       "id": 2,
-      "username": "testuser886442@gmail.com",
-      "password": "SomePassword88532!@",
-      "proxy": "212.192.209.28:3128:rsp46:s3m0664ij8xik",
-      "site": "Best Buy",
-      "proxyGroupName": "newgroup",
-      "accGroupName": "group2",
-      "status": "idle"
+      "username": "jfweiof@hotmail.com",
+      "password": "fwioejoiwjeiog",
+      "proxy": "38.131.141.148:5228:RS0456575:BDKTWY35",
+      "site": "Walmart",
+      "proxyGroupName": "bart proxies",
+      "accGroupName": "group1",
+      "status": "Running..."
     },
     {
       "id": 3,
+      "username": "jfweiof@hotmail.com",
+      "password": "fwioejoiwjeiog",
+      "proxy": "38.131.141.148:5228:RS0456575:BDKTWY35",
+      "site": "Best Buy",
+      "proxyGroupName": "bart proxies",
+      "accGroupName": "group1",
+      "status": "Running..."
+    },
+    {
+      "id": 4,
       "username": "someuser864585@gmail.com",
       "password": "password145@@",
-      "proxy": "212.192.209.29:3128:rsp46:s3m0664ij8xik",
-      "site": "Best Buy",
+      "proxy": "38.131.141.161:5193:RS0456575:BDKTWY35",
+      "site": "Target",
       "proxyGroupName": "newgroup",
       "accGroupName": "group2",
-      "status": "idle"
+      "status": "Running..."
     },
     {
       "id": 5,
       "username": "someuser85423585@gmail.com",
       "password": "password145@@",
-      "proxy": "212.192.209.31:3128:rsp46:s3m0664ij8xik",
-      "site": "Best Buy",
-      "proxyGroupName": "newgroup",
-      "accGroupName": "group2",
-      "status": "idle"
-    },
-    {
-      "id": 4,
-      "username": "someuser834685@gmail.com",
-      "password": "password145@@",
-      "proxy": "212.192.209.47:3128:rsp46:s3m0664ij8xik",
-      "site": "Best Buy",
+      "proxy": "38.131.141.154:5185:RS0456575:BDKTWY35",
+      "site": "Target",
       "proxyGroupName": "newgroup",
       "accGroupName": "group2",
       "status": "Idle"
-    },
-    {
-      "id": 7,
-      "username": "someuser85423585@gmail.com",
-      "password": "password145@@",
-      "proxy": "38.131.141.57:5036:RS0456575:BDKTWY35",
-      "site": "Target",
-      "proxyGroupName": "bart proxies",
-      "accGroupName": "group2",
-      "status": "idle"
-    },
-    {
-      "id": 6,
-      "username": "someuser864585@gmail.com",
-      "password": "password145@@",
-      "proxy": "38.131.141.201:5234:RS0456575:BDKTWY35",
-      "site": "Target",
-      "proxyGroupName": "bart proxies",
-      "accGroupName": "group2",
-      "status": "idle"
     }
   ]
 }
